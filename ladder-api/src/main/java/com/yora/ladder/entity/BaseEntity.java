@@ -25,23 +25,23 @@ public class BaseEntity implements Auditable<String, Long, LocalDateTime> {
 
      @Id
      @GeneratedValue
-     private Long id;
+     protected Long id;
 
      @Column(nullable = false, updatable = false)
      @CreatedDate
-     private LocalDateTime createdDate;
+     protected LocalDateTime createdDate;
 
      @Column
      @LastModifiedDate
-     private LocalDateTime lastModifiedDate;
+     protected LocalDateTime lastModifiedDate;
 
      @Column(nullable = false, updatable = false)
      @CreatedBy
-     private String createdBy;
+     protected String createdBy;
 
      @Column
      @LastModifiedBy
-     private String lastModifiedBy;
+     protected String lastModifiedBy;
 
      @Override
      public boolean isNew() {

@@ -4,7 +4,7 @@ import static jakarta.transaction.Transactional.TxType.REQUIRED;
 import static jakarta.transaction.Transactional.TxType.SUPPORTS;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import com.yora.ladder.entity.Entry;
@@ -12,8 +12,9 @@ import jakarta.transaction.Transactional;
 
 @Repository
 @Transactional(SUPPORTS)
-public interface EntryRepository extends PagingAndSortingRepository<Entry, Long> {
+public interface EntryRepository extends CrudRepository<Entry, Long> {
 
+     @Override
      @Transactional(REQUIRED)
      Entry save(Entry entity);
 

@@ -16,10 +16,10 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true, of = {"key", "section", "address"})
+@Builder
 @Table(name = "t_entry", indexes = {
           @Index(name = "key_index", columnList = "entry_key", unique = false),
           @Index(name = "address_step_index", columnList = "entry_address,step_id", unique = true),
