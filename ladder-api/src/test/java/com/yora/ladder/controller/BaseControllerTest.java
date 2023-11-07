@@ -52,8 +52,7 @@ public class BaseControllerTest {
      }
 
      protected Client newClient(String name, String code, String description) {
-          Client client = Client.builder().code(code).name(name).description(description).build();
-          return clientRepository.save(client);
+          return clientRepository.save(Client.builder().code(code).name(name).description(description).build());
      }
 
      protected Step newStep(Client c, String name, String address, boolean overridable,
@@ -77,11 +76,9 @@ public class BaseControllerTest {
      protected Step newStep(Client c, String name, String address, boolean overridable,
                boolean inheritable, String description, Step parent) {
 
-          Step step = Step.builder().address(address).name(name).overridable(overridable)
+          return stepRepository.save( Step.builder().address(address).name(name).overridable(overridable)
                     .inheritable(inheritable).client(c).description(description).parent(parent)
-                    .build();
-
-          return stepRepository.save(step);
+                    .build());
      }
 
 }
