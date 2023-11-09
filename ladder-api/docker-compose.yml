@@ -14,7 +14,14 @@ services:
     volumes:
       - ./data/db:/var/lib/mysql
 
-  redis:
-    image: 'redis:latest'
+  cache:
+    image: redis:latest
+    restart: always
     ports:
       - '6379:6379'
+    command: redis-server --save 20 1 --loglevel debug
+    volumes: 
+      - cache:/data
+volumes:
+  cache:
+    driver: local
