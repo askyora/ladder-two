@@ -1,7 +1,5 @@
 package com.yora.ladder.config;
 
-
-
 import java.time.Duration;
 import org.springframework.boot.autoconfigure.cache.RedisCacheManagerBuilderCustomizer;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
