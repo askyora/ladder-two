@@ -28,7 +28,7 @@ public class StepController {
 
      @GetMapping
      @RequestMapping(value = {"/{clientCode}/{key}"})
-     public StepResponseDto getSteps(
+     public Optional<StepResponseDto> getSteps(
                @PathVariable(value = "clientCode", required = true) String clientCode,
                @PathVariable(value = "key", required = true) String key) {
           return this.service.getStep(clientCode, key);

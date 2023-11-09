@@ -60,7 +60,12 @@ public class StepService extends BaseService {
           return Optional.of(mapper.stepToResponse(stepDao.save(step)));
      }
 
-     public StepResponseDto getStep(String clientCode, String key) {
-          return null;
+     public Optional<StepResponseDto> getStep(String clientCode, String key) {
+          Optional<Step> step= stepDao.findByAddressAndClientCode(key, clientCode);
+          if(step.isEmpty()) {
+             return Optional.empty();  
+          }
+          return Optional.of(mapper.stepToResponse(step.get()));
      }
+
 }
