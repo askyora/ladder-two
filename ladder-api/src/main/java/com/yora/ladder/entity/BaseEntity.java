@@ -1,5 +1,6 @@
 package com.yora.ladder.entity;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Optional;
@@ -21,7 +22,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false, of = {"id"})
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public class BaseEntity implements Auditable<String, Long, LocalDateTime> {
+public class BaseEntity implements Auditable<String, Long, LocalDateTime>,Serializable {
 
      @Id
      @GeneratedValue

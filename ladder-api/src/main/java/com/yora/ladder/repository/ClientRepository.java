@@ -14,11 +14,10 @@ import jakarta.transaction.Transactional;
 public interface ClientRepository extends CrudRepository<Client, Long> {
      
      
-     @Cacheable("ClientCache")
+     @Cacheable(value="ClientCache", key="#code")
      Optional<Client> findByCode(String code);
 
-     @Cacheable("ClientCache")
      @Override
      @Transactional(REQUIRED)
-     Client save(Client entity);
+     Client save(Client client);
 }

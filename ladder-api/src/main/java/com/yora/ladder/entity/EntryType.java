@@ -1,5 +1,7 @@
 package com.yora.ladder.entity;
 
-public enum EntryType {
+import java.io.Serializable;
+
+public enum EntryType implements Serializable{
      STRING, JSON, NUMBER, OBJECT
 }

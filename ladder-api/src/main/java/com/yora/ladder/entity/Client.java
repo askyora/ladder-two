@@ -1,5 +1,6 @@
 package com.yora.ladder.entity;
 
+import java.io.Serializable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
@@ -14,7 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity(name = "t_client")
 @EqualsAndHashCode(callSuper = true, of = {"code"})
-public class Client extends BaseEntity {
+public class Client extends BaseEntity implements Serializable{
 
      @Column(name = "client_code", unique = true, length = 12, nullable = false)
      private String code;

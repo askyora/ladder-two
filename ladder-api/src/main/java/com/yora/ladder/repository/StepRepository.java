@@ -15,18 +15,17 @@ import jakarta.transaction.Transactional;
 @Transactional(SUPPORTS)
 public interface StepRepository extends CrudRepository<Step, Long> {
 
-     @Cacheable("StepCache")
+     @Cacheable(value="StepCache",key="#name + ':' + #code")
      @Query("select s from Step s join s.client c where s.name=:name and c.code=:code")
      Optional<Step> findByNameAndClientCode(@Param("name") String name, @Param("code") String code);
 
-     @Cacheable("StepCache")
+     @Cacheable(value="StepCache" ,key="#address + '_' + #clientCode")
      @Query("select s from Step s join s.client c where c.code=:code and s.address=:address")
      Optional<Step> findByAddressAndClientCode(@Param("address") String address,
-               @Param("code") String code);
+               @Param("code") String clientCode);
      
-     @Cacheable("StepCache")
      @Override
      @Transactional(REQUIRED)
-     Step save(Step entity);
+     Step save(Step step);
 
 }

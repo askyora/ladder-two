@@ -1,5 +1,6 @@
 package com.yora.ladder.entity;
 
+import java.io.Serializable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Index;
@@ -23,7 +24,7 @@ import lombok.NoArgsConstructor;
                     @Index(name = "address_index", columnList = "step_address,client_id",
                               unique = true),
                     @Index(name = "name_index", columnList = "step_name,client_id", unique = true)})
-public class Step extends BaseEntity {
+public class Step extends BaseEntity implements Serializable{
 
      @Column(name = "step_name", length = 20)
      private String name;

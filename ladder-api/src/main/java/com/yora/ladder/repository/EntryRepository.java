@@ -16,17 +16,17 @@ import jakarta.transaction.Transactional;
 public interface EntryRepository extends CrudRepository<Entry, Long> {
 
      @Override
-     @Cacheable("EntryCache")
      @Transactional(REQUIRED)
      Entry save(Entry entity);
 
-     @Cacheable("EntryCache")
+     @Cacheable(value="EntryCache" , key="#address + '_' + #clientCode")
      @Query("select e from Entry e join e.step s join s.client c where c.code=:code and e.address=:address")
      Optional<Entry> findByAdressAndClientCode(@Param("address") String address,
                @Param("code") String clientCode);
 
-     @Cacheable("EntryCache")
+   
+     @Cacheable(value="EntryCache" , key="#section + ':' + #key")
      @Query("select e from Entry e join e.step s join s.client c where c.code=:code and e.section=:section and e.key=:key")
      Optional<Entry> findBySectionAndEntryName(@Param("section") String section,
-               @Param("key") String name);
+               @Param("key") String key);
 }
