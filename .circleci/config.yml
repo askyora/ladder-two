@@ -21,11 +21,11 @@ jobs:
       # Use mvn clean and package as the standard maven build phase
       - run:
           name: Build
-          command: cd ./ladder-api && mvn -B -DskipTests clean package
+          command: cd ./ladder-api && mvn spring-boot:build-image -Pnative -DskipTests
       # Then run your tests!
       - run:
           name: Test
-          command: cd ./ladder-api && mvn spring-boot:build-image -Pnative
+          command: cd ./ladder-api && mvn test
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
