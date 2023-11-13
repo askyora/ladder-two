@@ -20,6 +20,9 @@ jobs:
       - checkout
       # Use mvn clean and package as the standard maven build phase
       - run:
+          name: Change_Directory
+          command: cd ./ladder-two/ladder-api
+      - run:
           name: Build
           command: mvn -B -DskipTests clean package
       # Then run your tests!
@@ -29,7 +32,7 @@ jobs:
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
-workflows:
+ workflows:
   sample: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
     jobs:
