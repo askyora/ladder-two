@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true, of = {"code"})
 public class Client extends BaseEntity implements Serializable{
 
-     private static final long serialVersionUID = 1L;
+     private static final long serialVersionUID = 904586354326974629L;
 
      @Column(name = "client_code", unique = true, length = 12, nullable = false)
      private String code;

@@ -24,7 +24,7 @@ import lombok.EqualsAndHashCode;
 @EntityListeners(AuditingEntityListener.class)
 public class BaseEntity implements Auditable<String, Long, LocalDateTime>,Serializable {
 
-     private static final long serialVersionUID = 1L;
+     private static final long serialVersionUID = 9045863543269746L;
 
      @Id
      @GeneratedValue

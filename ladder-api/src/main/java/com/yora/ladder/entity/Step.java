@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
                     @Index(name = "name_index", columnList = "step_name,client_id", unique = true)})
 public class Step extends BaseEntity implements Serializable{
 
-     private static final long serialVersionUID = 1L;
+     private static final long serialVersionUID = 95863543269746292L;
 
      @Column(name = "step_name", length = 20)
      private String name;
