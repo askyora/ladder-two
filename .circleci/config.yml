@@ -26,7 +26,6 @@ jobs:
       - run:
           name: Test
           command: cd ./ladder-api && mvn test
-
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
