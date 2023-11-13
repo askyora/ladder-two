@@ -25,7 +25,7 @@ jobs:
       # Then run your tests!
       - run:
           name: Test
-          command: cd ./ladder-api && mvn test
+          command: cd ./ladder-api && mvn spring-boot:build-image -Pnative
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
