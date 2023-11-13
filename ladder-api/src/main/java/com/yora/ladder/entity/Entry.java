@@ -28,6 +28,8 @@ import lombok.NoArgsConstructor;
           @Index(name = "sec_uni_index", columnList = "entry_section, step_id", unique = true)})
 public class Entry extends BaseEntity implements Serializable{
 
+     private static final long serialVersionUID = 1L;
+
      @Column(name = "entry_key")
      private String key;
 
