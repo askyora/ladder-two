@@ -1,0 +1,14 @@
+<div *ngIf="step">
+    <h2>{{step.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{step.id}}</div>
+    <div>
+      <label for="step-name">Step name: </label>
+      <input id="step-name" [(ngModel)]="step.name" placeholder="Step name"/>
+    </div>
+    <div>
+        <label for="step-address">Step name: </label>
+        <input id="step-address" [(ngModel)]="step.address" placeholder="Step address"/>
+      </div>
+    <button type="button" >go back</button>
+    <button type="button">save</button>
+  </div>
