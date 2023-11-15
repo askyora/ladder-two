@@ -7,5 +7,5 @@ import { StepsComponent } from './steps/steps.component';
 
 })
 export class AppComponent {
-  title = 'ladder-ui';
+  title = 'Ladder Web';
 }
