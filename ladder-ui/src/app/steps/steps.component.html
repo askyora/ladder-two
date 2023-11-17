@@ -1,4 +1,5 @@
-<div *ngIf="step">
+<div *ngIf="steps">
+  <div *ngFor="let step of steps; index as i;">
     <h2>{{step.name | uppercase}} Details</h2>
     <div><span>id: </span>{{step.id}}</div>
     <div>
@@ -11,4 +12,5 @@
       </div>
     <button type="button" >go back</button>
     <button type="button">save</button>
+  </div>
 </div>
