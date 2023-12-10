@@ -1,0 +1,31 @@
+server:
+  port: 8085
+spring:
+  datasource:
+    url: ${DB_URL}
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    hikari:
+      pool-name: ladder-pool
+      maximum-pool-size: 50
+      max-lifetime: 1800000
+      idle-timeout: 30000
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: true
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.orm.jpa: INFO
+    org.springframework.transaction: INFO
+repository:
+  cache: true

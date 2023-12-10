@@ -5,14 +5,16 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { StepsComponent } from './steps/steps.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
-    AppComponent,StepsComponent, DashboardComponent
+    AppComponent, DashboardComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,StepsComponent
   ],
   providers: [],
   bootstrap: [AppComponent],

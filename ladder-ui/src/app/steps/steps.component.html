@@ -1,6 +1,6 @@
 <div *ngIf="steps">
   <div *ngFor="let step of steps; index as i;">
-    <h2>{{step.name | uppercase}} Details</h2>
+    <h2>{{step.name}} Details</h2>
     <div><span>id: </span>{{step.id}}</div>
     <div>
       <label for="step-name">Step name: </label>
@@ -14,3 +14,8 @@
     <button type="button">save</button>
   </div>
 </div>
+<mat-tree>
+  <mat-tree-node> parent node </mat-tree-node>
+  <mat-tree-node> -- child node1 </mat-tree-node>
+  <mat-tree-node> -- child node2 </mat-tree-node>
+</mat-tree>
